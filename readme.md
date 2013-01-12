@@ -11,3 +11,9 @@
 ### License
 
 The Laravel framework is open-sourced software license under the [MIT license](http://opensource.org/licenses/MIT)
+
+### To Do:
+- [ ] Form Validation (lulz who does that?)
+- [ ] Design, ux thinking (need title and description?)
+- [ ] Tags
+- [ ] Proxy to track links out from app?

@@ -19,6 +19,13 @@
 			<textarea name="description" id="" cols="30" rows="10"></textarea> <br>
 			<input type="submit" name="submit" />
 		</form>
+
+		<h1>Your Links</h1>
+		<ul>
+			<?php foreach ( $links as $link ) : ?>
+			<li><a href="<?php echo $link->url; ?>" target="_blank"><?php echo $link->title; ?></a></li>
+			<?php endforeach; ?>
+		</ul>
 		<?php endif; ?>
 	</body>
 </html>

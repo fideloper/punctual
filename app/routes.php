@@ -18,9 +18,18 @@ App::bind('link', function()
 
 Route::get('/', function()
 {
+	$logged = Auth::check();
+	$links = FALSE;
+
+	if ( $logged )
+	{
+		$links = Auth::user()->links()->get();
+	}
+
 	return View::make('hello', [
-		'logged' => Auth::check(),
-		'user' => Auth::user()
+		'logged' => $logged,
+		'user' => Auth::user(),
+		'links' => $links
 	]);
 });
 
@@ -41,5 +50,5 @@ Route::post('/submit', function()
 		'description' => Input::get('description'),
 	]);
 
-	return 'yay';
+	return Redirect::to('/');
 });
