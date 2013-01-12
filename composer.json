@@ -9,7 +9,10 @@
 			"app/models",
 			"app/database/migrations",
 			"app/tests/TestCase.php"
-		]
+		],
+		"psr-0": {
+			"Punctual": "app/lib"
+		}
 	},
 	"minimum-stability": "dev"
 }
