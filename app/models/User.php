@@ -38,4 +38,9 @@ class User extends Eloquent implements UserInterface {
 		return $this->password;
 	}
 
+	public function links()
+	{
+		return $this->hasMany('Link', 'user_id');
+	}
+
 }

@@ -19,6 +19,7 @@ class CreateLinksTable extends Migration {
 			$table->string('title');
 			$table->text('description')->nullable();
 			$table->boolean('hidden')->default(FALSE);
+			$table->timestamps();
 		});
 	}
 

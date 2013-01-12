@@ -11,7 +11,44 @@
 |
 */
 
+App::bind('link', function()
+{
+    return new Punctual\Storage\Link\Eloquent;
+});
+
 Route::get('/', function()
 {
-	return View::make('hello');
+	$logged = Auth::check();
+	$links = FALSE;
+
+	if ( $logged )
+	{
+		$links = Auth::user()->links()->get();
+	}
+
+	return View::make('hello', [
+		'logged' => $logged,
+		'user' => Auth::user(),
+		'links' => $links
+	]);
+});
+
+Route::post('/login', function()
+{
+	Auth::attempt( ['email' => Input::get('email'), 'password' => Input::get('password')] );
+	return Redirect::to('/');
+});
+
+Route::post('/submit', function()
+{
+	$link = App::make('link');
+
+	$link->add([
+		'title' => Input::get('title'),
+		'url' => Input::get('url'),
+		'user_id' => Auth::user()->id,
+		'description' => Input::get('description'),
+	]);
+
+	return Redirect::to('/');
 });
