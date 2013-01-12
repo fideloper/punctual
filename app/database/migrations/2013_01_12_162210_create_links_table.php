@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLinkTable extends Migration {
+class CreateLinksTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -29,7 +29,7 @@ class CreateLinkTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('link');
+		Schema::drop('links');
 	}
 
 }
