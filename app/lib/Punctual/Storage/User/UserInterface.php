@@ -4,6 +4,8 @@ interface UserInterface {
 
 	public function all();
 
+	public function getUserByKey($api_key);
+
 	public function getCore();
 
 }

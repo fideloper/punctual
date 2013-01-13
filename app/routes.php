@@ -16,6 +16,11 @@ App::bind('link', function()
     return new Punctual\Storage\Link\Eloquent;
 });
 
+App::bind('user', function()
+{
+	return new Punctual\Storage\User\Eloquent;
+});
+
 /*
 |
 | Basic routes

@@ -13,7 +13,7 @@ class AddApiKeyToUsers extends Migration {
 	{
 		Schema::table('users', function($table)
 		{
-			$this->string('api_key')->nullable();
+			$table->string('api_key')->nullable();
 		});
 	}
 
