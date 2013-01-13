@@ -69,4 +69,4 @@ Route::post('/submit', function()
 | Api Controller
 |
 */
-Route::resource('api', 'ApiController');
+Route::resource('api/links', 'LinksController');

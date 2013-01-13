@@ -1,6 +1,6 @@
 <?php
 
-class ApiController extends BaseController {
+class LinksController extends BaseController {
 
 	public function __construct()
 	{
