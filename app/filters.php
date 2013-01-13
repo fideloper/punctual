@@ -38,6 +38,26 @@ Route::filter('auth', function()
 	if (Auth::guest()) return Redirect::route('login');
 });
 
+// Check if valid api_key
+Route::filter('apiauth', function()
+{
+	$user = App::make('user');
+
+	$user_id = $user->getUserByKey( Input::get('api_key') );
+
+	if( $user_id === FALSE || $user_id === NULL)
+	{
+		// Return 401 Unauthorized with JSON response
+		return Response::json([
+			'error' => TRUE,
+			'message' => 'Missing or incorrect api key'],
+			401
+		);
+	}
+
+	Auth::login($user_id);
+});
+
 
 Route::filter('guest', function()
 {
