@@ -16,6 +16,12 @@ App::bind('link', function()
     return new Punctual\Storage\Link\Eloquent;
 });
 
+/*
+|
+| Basic routes
+|
+*/
+
 Route::get('/', function()
 {
 	$logged = Auth::check();
@@ -52,3 +58,10 @@ Route::post('/submit', function()
 
 	return Redirect::to('/');
 });
+
+/*
+|
+| Api Controller
+|
+*/
+Route::resource('api', 'ApiController');
