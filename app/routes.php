@@ -2,15 +2,13 @@
 
 /*
 |--------------------------------------------------------------------------
-| Application Routes
+| Application Bindings
 |--------------------------------------------------------------------------
 |
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the Closure to execute when that URI is requested.
+| Probably don't belong in here, but whatever
+| Better Bootstrap area?
 |
 */
-
 App::bind('link', function()
 {
     return new Punctual\Storage\Link\Eloquent;
@@ -20,6 +18,17 @@ App::bind('user', function()
 {
 	return new Punctual\Storage\User\Eloquent;
 });
+
+/*
+|--------------------------------------------------------------------------
+| Application Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register all of the routes for an application.
+| It's a breeze. Simply tell Laravel the URIs it should respond to
+| and give it the Closure to execute when that URI is requested.
+|
+*/
 
 /*
 |
