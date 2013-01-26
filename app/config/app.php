@@ -107,6 +107,9 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
+		'Punctual\Storage\Link\LinkServiceProvider',
+		'Punctual\Storage\User\UserServiceProvider',
+
 	),
 
 	/*

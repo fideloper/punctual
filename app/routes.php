@@ -2,25 +2,6 @@
 
 /*
 |--------------------------------------------------------------------------
-| Application Bindings
-|--------------------------------------------------------------------------
-|
-| Probably don't belong in here, but whatever
-| Better Bootstrap area?
-|
-*/
-App::bind('link', function()
-{
-    return new Punctual\Storage\Link\Eloquent;
-});
-
-App::bind('user', function()
-{
-	return new Punctual\Storage\User\Eloquent;
-});
-
-/*
-|--------------------------------------------------------------------------
 | Application Routes
 |--------------------------------------------------------------------------
 |
