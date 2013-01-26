@@ -45,11 +45,11 @@ Route::filter('apiauth', function()
 
 	$user_id = $user->getUserByKey( Input::get('api_key') );
 
-	if( $user_id === FALSE || $user_id === NULL)
+	if( $user_id === false || $user_id === NULL)
 	{
 		// Return 401 Unauthorized with JSON response
 		return Response::json([
-			'error' => TRUE,
+			'error' => true,
 			'message' => 'Missing or incorrect api key'],
 			401
 		);

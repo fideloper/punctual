@@ -20,7 +20,7 @@
 Route::get('/', function()
 {
 	$logged = Auth::check();
-	$links = FALSE;
+	$links = false;
 
 	if ( $logged )
 	{
