@@ -11,7 +11,7 @@ class Eloquent implements UserInterface {
 
 	public function all()
 	{
-
+		return $this->_core->all();
 	}
 
 	public function getUserByKey($api_key)
