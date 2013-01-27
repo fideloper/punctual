@@ -18,6 +18,7 @@ class LinksController extends BaseController {
 
 	/**
 	 * Display a listing of the resource.
+	 * [Get /foo]
 	 *
 	 * @return Response
 	 */
@@ -26,17 +27,20 @@ class LinksController extends BaseController {
 		$links = $this->_link->paged(Auth::user()->id, 20, 0);
 
 		return Response::json([
-			'error' => true,
-			'message' => 'Missing or incorrect api key'],
-			401
+			'error' => false,
+			$links->toArray()
+			],
+			200
 		);
 	}
 
 	/**
 	 * Show the form for creating a new resource.
+	 * [GET /foo/create]
 	 *
 	 * @return Response
 	 */
+
 	public function create()
 	{
 		//
@@ -44,6 +48,7 @@ class LinksController extends BaseController {
 
 	/**
 	 * Store a newly created resource in storage.
+	 * [POST /foo]
 	 *
 	 * @return Response
 	 */
@@ -54,6 +59,7 @@ class LinksController extends BaseController {
 
 	/**
 	 * Display the specified resource.
+	 * [GET /foo/[id]]
 	 *
 	 * @return Response
 	 */
@@ -64,6 +70,7 @@ class LinksController extends BaseController {
 
 	/**
 	 * Show the form for editing the specified resource.
+	 * [GET /foo/[id]/edit]
 	 *
 	 * @return Response
 	 */
@@ -74,6 +81,7 @@ class LinksController extends BaseController {
 
 	/**
 	 * Update the specified resource in storage.
+	 * [PUT /foo/[id]]
 	 *
 	 * @return Response
 	 */
@@ -84,6 +92,7 @@ class LinksController extends BaseController {
 
 	/**
 	 * Remove the specified resource from storage.
+	 * [DELETE /foo/[id]]
 	 *
 	 * @return Response
 	 */
