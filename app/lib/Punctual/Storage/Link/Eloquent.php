@@ -11,6 +11,14 @@ class Eloquent implements LinkInterface {
 
 	public function all()
 	{
+		return $this->_core->all();
+	}
+
+	public function paged($userId)
+	{
+		return $this->_core->where('user_id', $userId)
+						   ->paginate();
+
 
 	}
 
