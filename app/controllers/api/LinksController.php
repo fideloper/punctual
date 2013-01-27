@@ -40,11 +40,12 @@ class LinksController extends BaseController {
 	 *
 	 * @return Response
 	 */
-
+	/*
 	public function create()
 	{
 		//
 	}
+	*/
 
 	/**
 	 * Store a newly created resource in storage.
@@ -74,10 +75,12 @@ class LinksController extends BaseController {
 	 *
 	 * @return Response
 	 */
+	/*
 	public function edit($id)
 	{
 		//
 	}
+	*/
 
 	/**
 	 * Update the specified resource in storage.
