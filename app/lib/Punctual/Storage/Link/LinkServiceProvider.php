@@ -18,6 +18,8 @@ class LinkServiceProvider extends ServiceProvider {
 		{
 			return new LinkEloquent;
 		};
+
+		$app->bind('Punctual\Storage\Link\LinkInterface', 'Punctual\Storage\Link\Eloquent');
 	}
 
 }

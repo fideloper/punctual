@@ -18,6 +18,8 @@ class UserServiceProvider extends ServiceProvider {
 		{
 			return new UserEloquent;
 		};
+
+		$app->bind('Punctual\Storage\User\UserInterface', 'Punctual\Storage\User\Eloquent');
 	}
 
 }

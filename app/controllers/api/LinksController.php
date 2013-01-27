@@ -1,10 +1,19 @@
 <?php
 
+use Punctual\Storage\Link\LinkInterface;
+use Punctual\Storage\User\UserInterface;
+
 class LinksController extends BaseController {
 
-	public function __construct()
+	private $_link;
+	private $_user;
+
+	public function __construct(LinkInterface $link, UserInterface $user)
 	{
 		$this->beforeFilter('apiauth');
+
+		$this->_link = $link;
+		$this->_user = $user;
 	}
 
 	/**
@@ -14,8 +23,13 @@ class LinksController extends BaseController {
 	 */
 	public function index()
 	{
-		//
-		return 'hello';
+		$links = $this->_link->paged(Auth::user()->id, 20, 0);
+
+		return Response::json([
+			'error' => true,
+			'message' => 'Missing or incorrect api key'],
+			401
+		);
 	}
 
 	/**

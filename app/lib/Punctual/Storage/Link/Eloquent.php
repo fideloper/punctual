@@ -16,7 +16,7 @@ class Eloquent implements LinkInterface {
 
 	public function paged($userId, $limit, $offset=0)
 	{
-		return $this->_core->where('user_id', $user_id)
+		return $this->_core->where('id', $userId)
 						   ->skip($offset)
 						   ->take($limit)
 						   ->get();
