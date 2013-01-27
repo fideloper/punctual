@@ -55,7 +55,20 @@ class LinksController extends BaseController {
 	 */
 	public function store()
 	{
-		//
+		// Trololo validation
+		$linkId = $this->_link->add([
+			'title' => Input::get('title'),
+			'url' => Input::get('url'),
+			'user_id' => Auth::user()->id,
+			'description' => Input::get('description'),
+		]);
+
+		return Response::json([
+			'error' => false,
+			'message' => 'Link created successfully'
+			],
+			200
+		);
 	}
 
 	/**
