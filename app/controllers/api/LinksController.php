@@ -24,11 +24,20 @@ class LinksController extends BaseController {
 	 */
 	public function index()
 	{
-		$links = $this->_link->paged(Auth::user()->id, 20, 0);
+		$pagedLinks = $this->_link->paged(Auth::user()->id);
+
+		// Having to do this sucks.
+		// Paginator has no JSON support?
+		$links = [];
+
+		foreach ( $pagedLinks as $link ) {
+			$links[] = $link->toArray();
+		}
 
 		return Response::json([
 			'error' => false,
-			$links->toArray()
+			'links' => $links,
+			'pagination' => $pagedLinks->links()
 			],
 			200
 		);

@@ -14,12 +14,12 @@ class Eloquent implements LinkInterface {
 		return $this->_core->all();
 	}
 
-	public function paged($userId, $limit, $offset=0)
+	public function paged($userId)
 	{
 		return $this->_core->where('user_id', $userId)
-						   ->skip($offset)
-						   ->take($limit)
-						   ->get();
+						   ->paginate();
+
+
 	}
 
 	public function add(array $data)
